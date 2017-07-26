@@ -43,11 +43,14 @@ class ActivityTest < Minitest::Test
     assert_equal 20, target
   end
 
-end
+  def test_activity_can_have_multiple_participants
+    activity = Activity.new("Brunch")
+    activity.add_participant("Jim", 20)
+    activity.add_participant("Joe", 40)
 
-# > activity.total_cost
-# # => 20
-#
-# > activity.add_participant("Joe", 40)
-# > activity.participants
-# => {"Jim" => 20, "Joe" => 40}
+    target = {"Jim" => 20, "Joe" => 40}
+
+    assert_equal target, activity.participants
+  end
+
+end
