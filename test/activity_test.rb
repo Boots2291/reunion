@@ -33,14 +33,17 @@ class ActivityTest < Minitest::Test
 
     assert_equal ({"Jim" => 20}), activity.participants
   end
+
+  def test_activity_can_get_total_cost
+    activity = Activity.new("Brunch")
+
+    target = activity.total_cost
+
+    assert_equal 20, target
+  end
+
 end
 
-
-#
-# > activity.add_participant("Jim", 20)
-# > activity.participants
-# # => {"Jim" => 20}
-#
 # > activity.total_cost
 # # => 20
 #
