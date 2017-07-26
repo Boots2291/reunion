@@ -2,6 +2,7 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/activity'
+require 'pry'
 
 class ActivityTest < Minitest::Test
 
@@ -20,7 +21,8 @@ class ActivityTest < Minitest::Test
   def test_activity_has_empty_hash_of_participants
     activity = Activity.new("Brunch")
 
-    assert_equal {}, activity.participants
+    assert_equal Hash, activity.participants.class
+    assert_equal 0, activity.participants.length
   end
 
 end
