@@ -21,4 +21,9 @@ class Activity
     (self.total_cost) / participants.count
   end
 
+  def owed
+    split_amount = (self.split)
+    participants.transform_values{|cost| -(cost - split_amount)}
+  end
+
 end
