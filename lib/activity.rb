@@ -17,4 +17,8 @@ class Activity
     participants.values.sum
   end
 
+  def split
+    (self.total_cost) / participants.count
+  end
+
 end
