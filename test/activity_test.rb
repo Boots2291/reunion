@@ -21,14 +21,21 @@ class ActivityTest < Minitest::Test
   def test_activity_has_empty_hash_of_participants
     activity = Activity.new("Brunch")
 
+    assert_equal ({}), activity.participants
     assert_equal Hash, activity.participants.class
     assert_equal 0, activity.participants.length
   end
 
+  def test_activity_can_add_participants
+    activity = Activity.new("Brunch")
+
+    activity.add_participant("Jim", 20)
+
+    assert_equal ({"Jim" => 20}), activity.participants
+  end
 end
 
-# activity.participants
-# # => {}
+
 #
 # > activity.add_participant("Jim", 20)
 # > activity.participants
