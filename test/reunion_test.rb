@@ -11,6 +11,12 @@ class ReunionTest < Minitest::Test
     assert_instance_of Reunion, reunion
   end
 
+  def test_reunion_has_a_name
+    reunion = Reunion.new("Denver")
+
+    assert_equal "Denver", reunion.name
+  end
+
 end
 # reunion = Reunion.new("Denver")
 # # => #<Reunion:0x007fe4ca1defc8 ...>
