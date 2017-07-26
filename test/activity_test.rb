@@ -36,6 +36,7 @@ class ActivityTest < Minitest::Test
 
   def test_activity_can_get_total_cost
     activity = Activity.new("Brunch")
+    activity.add_participant("Jim", 20)
 
     target = activity.total_cost
 
