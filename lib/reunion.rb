@@ -14,4 +14,8 @@ class Reunion
     activities << activity
   end
 
+  def total_cost
+
+  end
+
 end
