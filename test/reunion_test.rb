@@ -23,12 +23,19 @@ class ReunionTest < Minitest::Test
     assert_equal [], reunion.activites
   end
 
+  def test_reunion_can_add_activities
+    activity_1 = Activity.new("Brunch")
+    activity_1.add_participant("Jim", 20)
+    activity_1.add_participant("Joe", 40)
+
+    reunion.add_activity(activity_1)
+    target = reunion.activities
+
+    assert_equal [activity_1], target
+  end
+
 end
 
-#
-# > reunion.activities
-# # => []
-#
 # > activity_1 = Activity.new("Brunch")
 # # => #<Activity:0x007fe4ca1d9438 ...>
 #
