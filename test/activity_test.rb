@@ -16,4 +16,25 @@ class ActivityTest < Minitest::Test
 
     assert_equal "Brunch", activity.name
   end
+
+  def test_activity_has_empty_hash_of_participants
+    activity = Activity.new("Brunch")
+
+    assert_equal {}, activity.participants
+  end
+
 end
+
+# activity.participants
+# # => {}
+#
+# > activity.add_participant("Jim", 20)
+# > activity.participants
+# # => {"Jim" => 20}
+#
+# > activity.total_cost
+# # => 20
+#
+# > activity.add_participant("Joe", 40)
+# > activity.participants
+# => {"Jim" => 20, "Joe" => 40}
