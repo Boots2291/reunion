@@ -20,10 +20,11 @@ class ReunionTest < Minitest::Test
   def test_reunion_initializes_with_an_empty_array_of_activites
     reunion = Reunion.new("Denver")
 
-    assert_equal [], reunion.activites
+    assert_equal [], reunion.activities
   end
 
   def test_reunion_can_add_activities
+    reunion = Reunion.new("Denver")
     activity_1 = Activity.new("Brunch")
     activity_1.add_participant("Jim", 20)
     activity_1.add_participant("Joe", 40)
@@ -35,12 +36,3 @@ class ReunionTest < Minitest::Test
   end
 
 end
-
-# > activity_1 = Activity.new("Brunch")
-# # => #<Activity:0x007fe4ca1d9438 ...>
-#
-# > activity_1.add_participant("Jim", 20)
-# > activity_1.add_participant("Joe", 40)
-# > reunion.add_activity(activity_1)
-# > reunion.activities
-# # => [#<Activity:0x007fe4ca1d9438 ...>]

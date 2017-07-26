@@ -1,11 +1,17 @@
+require './lib/activity'
+
 class Reunion
 
   attr_reader :name,
-              :activites
+              :activities
 
   def initialize(name)
     @name = name
-    @activites = []
+    @activities = []
+  end
+
+  def add_activity(activity)
+    activities << activity
   end
 
 end
