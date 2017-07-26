@@ -53,4 +53,24 @@ class ActivityTest < Minitest::Test
     assert_equal target, activity.participants
   end
 
+  def test_activity_can_sum_multiple_costs
+    activity = Activity.new("Brunch")
+    activity.add_participant("Jim", 20)
+    activity.add_participant("Joe", 40)
+
+    assert_equal 60, activity.total_cost
+  end
+
 end
+
+# > activity.add_participant("Jim", 20)
+# > activity.add_participant("Joe", 40)
+#
+# > activity.total_cost
+# # => 60
+#
+# > activity.split
+# # => 30
+#
+# > activity.owed
+# # => {"Jim" => 10, "Joe" => -10}
