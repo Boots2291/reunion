@@ -17,12 +17,14 @@ class ReunionTest < Minitest::Test
     assert_equal "Denver", reunion.name
   end
 
+  def test_reunion_initializes_with_an_empty_array_of_activites
+    reunion = Reunion.new("Denver")
+
+    assert_equal [], reunion.activites
+  end
+
 end
-# reunion = Reunion.new("Denver")
-# # => #<Reunion:0x007fe4ca1defc8 ...>
-#
-# > reunion.name
-# # => "Denver"
+
 #
 # > reunion.activities
 # # => []
